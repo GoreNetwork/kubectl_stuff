@@ -23,12 +23,12 @@ See Cluster-arch.md
     * kube-proxy: makes sure the pods on worker nodes can reach other pods
   
 * etcd
-  * Distributed key value store
+  * Distributed key-value store
     * basically a dict
       * Something like user: {age: 25, location: nyc, salary=50000}
       * Or something simpler like just {salary: 5000}
 * kubeapi server
-  * pulls data from etcd server and responds back to api user
+  * front door for all cluster operations — reads/writes etcd as needed and responds back to the caller
   * does things like
     * Auth
     * validate request
